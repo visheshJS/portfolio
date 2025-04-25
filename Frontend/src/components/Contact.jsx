@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Button } from "./ui/Button"
 import { Input } from "./ui/Input"
 import { Textarea } from "./ui/Textarea"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { Mail, MapPin, Phone, Send, Instagram, Github, Linkedin } from "lucide-react"
 
 export default function Contact() {
   const formRef = useRef(null)
@@ -208,7 +208,7 @@ export default function Contact() {
                       className="p-3 rounded-full bg-gray-800 hover:bg-purple-500/20 transition-colors"
                       aria-label="GitHub"
                     >
-                      {/* ...GitHub SVG... */}
+                      <Github className="h-6 w-6" />
                     </a>
                     <a
                       href="https://www.linkedin.com/in/vishesh-sharma-19124029b/"
@@ -217,14 +217,14 @@ export default function Contact() {
                       className="p-3 rounded-full bg-gray-800 hover:bg-purple-500/20 transition-colors"
                       aria-label="LinkedIn"
                     >
-                      {/* ...LinkedIn SVG... */}
+                      <Linkedin className="h-6 w-6" />
                     </a>
                     <a
                       href="#"
                       className="p-3 rounded-full bg-gray-800 hover:bg-purple-500/20 transition-colors"
                       aria-label="Instagram"
                     >
-                      {/* ...Instagram SVG... */}
+                      <Instagram className="h-6 w-6" />
                     </a>
                   </div>
                 </CardContent>
