@@ -167,7 +167,7 @@ export default function Projects() {
                             size="sm"
                             className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white"
                           >
-                            <ExternalLink className="mr-2 h-4 w-4" />
+                            <ExternalLink to={project.demo} className="mr-2 h-4 w-4" />
                             Live Demo
                           </Button>
                         </motion.div>
