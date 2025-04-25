@@ -1,17 +1,25 @@
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/Card"
-import { Button } from "./ui/Button"
-import { Badge } from "./ui/Badge"
-import { ExternalLink, Github } from "lucide-react"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/Card";
+import { Button } from "./ui/Button";
+import { Badge } from "./ui/Badge";
+import { ExternalLink, Github } from "lucide-react";
 
 export default function Projects() {
-  const [activeFilter, setActiveFilter] = useState("All")
+  const [activeFilter, setActiveFilter] = useState("All");
 
-  const filters = ["All", "Web", "UI/UX"]
-  
+  const filters = ["All", "Web", "UI/UX"];
+
   // Placeholder image as base64 data URL
-  const placeholderImage = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iIzFlMjkzYiIvPjx0ZXh0IHg9IjQwMCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzYiIGZpbGw9IiM5NGEzYjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlByb2plY3QgSW1hZ2UgUGxhY2Vob2xkZXI8L3RleHQ+PC9zdmc+"
+  const placeholderImage =
+    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iIzFlMjkzYiIvPjx0ZXh0IHg9IjQwMCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzYiIGZpbGw9IiM5NGEzYjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlByb2plY3QgSW1hZ2UgUGxhY2Vob2xkZXI8L3RleHQ+PC9zdmc+";
 
   const projects = [
     {
@@ -19,18 +27,25 @@ export default function Projects() {
       title: "Health-Quest",
       description:
         "Developed and deployed a fullstack interactive educational web application that gamifies medical knowledge through multiple memory-based challenges, implementing responsive UI with React, custom animations, and game mechanics with varying difficulty levels",
-      image: placeholderImage,
-      tags: ["React", "Node.js","Socket.io", "MongoDB", "Express"],
+      image: "/images/healthquest.png",
+      tags: ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
       category: "Web",
       github: "https://github.com/visheshJS/healthQuest",
       demo: "https://healthquestgame.onrender.com/",
     },
     {
       id: 2,
-      title:"Google Developers Group, DTU",
-      description: "Contributed in making the GDG website , made the frontend and authentication functionality.",
-      image: placeholderImage,
-      tags: ["React", "Tailwind CSS", "Clerk Authentication", "Node.js", "Express.js"],
+      title: "Google Developers Group, DTU",
+      description:
+        "Contributed in making the GDG website , made the frontend and authentication functionality.",
+      image: "/images/gdg.png",
+      tags: [
+        "React",
+        "Tailwind CSS",
+        "Clerk Authentication",
+        "Node.js",
+        "Express.js",
+      ],
       category: "Web",
       github: "#",
       demo: "#",
@@ -38,8 +53,9 @@ export default function Projects() {
     {
       id: 3,
       title: "Currency Converter",
-      description: "A collaborative task management application with real-time updates and team features.",
-      image: placeholderImage,
+      description:
+        "A collaborative task management application with real-time updates and team features.",
+      image: "/images/currency.png",
       tags: ["React", "Tailwind CSS", "Socket.io", "Exchange Rate API"],
       category: "Web",
       github: "https://github.com/visheshJS/currencyConverter",
@@ -49,18 +65,18 @@ export default function Projects() {
       id: 4,
       title: "Netflix UI Clone",
       description: "responsive netflix UI clone using html, css, javascript",
-      image: placeholderImage,
+      image: "/images/netflix.png",
       tags: ["HTML", "CSS", "JavaScript"],
       category: "UI/UX",
       github: "#",
       demo: "https://visheshcoderguy.github.io/project_css_webd/",
     },
-    
-    
-  ]
+  ];
 
   const filteredProjects =
-    activeFilter === "All" ? projects : projects.filter((project) => project.category === activeFilter)
+    activeFilter === "All"
+      ? projects
+      : projects.filter((project) => project.category === activeFilter);
 
   const container = {
     hidden: { opacity: 0 },
@@ -70,28 +86,35 @@ export default function Projects() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
-  }
+  };
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-gray-900 to-gray-950">
+    <section
+      id="projects"
+      className="py-20 bg-gradient-to-b from-gray-900 to-gray-950"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400">
             My Projects
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-            Here are some of my recent projects. Each project is a unique piece of development that showcases my skills
-            and passion.
+            Here are some of my recent projects. Each project is a unique piece
+            of development that showcases my skills and passion.
           </p>
 
           <div className="flex flex-wrap justify-center gap-2 mb-10">
             {filters.map((filter) => (
-              <motion.div key={filter} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                key={filter}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button
                   variant={activeFilter === filter ? "default" : "outline"}
                   onClick={() => setActiveFilter(filter)}
@@ -141,18 +164,29 @@ export default function Projects() {
                         />
                       </div>
                       <CardHeader>
-                        <CardTitle className="text-xl text-white">{project.title}</CardTitle>
-                        <CardDescription className="text-gray-400">{project.description}</CardDescription>
+                        <CardTitle className="text-xl text-white">
+                          {project.title}
+                        </CardTitle>
+                        <CardDescription className="text-gray-400">
+                          {project.description}
+                        </CardDescription>
                       </CardHeader>
                       <CardContent className="flex flex-wrap gap-2">
                         {project.tags.map((tag, index) => (
-                          <Badge key={index} variant="outline" className="bg-gray-800/50 text-gray-300 border-gray-700">
+                          <Badge
+                            key={index}
+                            variant="outline"
+                            className="bg-gray-800/50 text-gray-300 border-gray-700"
+                          >
                             {tag}
                           </Badge>
                         ))}
                       </CardContent>
                       <CardFooter className="flex justify-between mt-auto">
-                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
                           <Button
                             variant="outline"
                             size="sm"
@@ -162,14 +196,23 @@ export default function Projects() {
                             Code
                           </Button>
                         </motion.div>
-                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                          <Button
-                            size="sm"
-                            className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white"
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <a
+                            href={
+                              project.demo.startsWith("http")
+                                ? project.demo
+                                : `https://${project.demo}`
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white rounded-md text-sm font-medium transition"
                           >
-                            <ExternalLink to={project.demo} className="mr-2 h-4 w-4" />
+                            <ExternalLink className="mr-2 h-4 w-4" />
                             Live Demo
-                          </Button>
+                          </a>
                         </motion.div>
                       </CardFooter>
                     </Card>
@@ -179,9 +222,7 @@ export default function Projects() {
             </motion.div>
           </motion.div>
         </AnimatePresence>
-
-       
       </div>
     </section>
-  )
-} 
+  );
+}
